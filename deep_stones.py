@@ -5,6 +5,10 @@ import cv2
 import json
 
 #this function build model and load weights
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+for gpu in gpus:
+  tf.config.experimental.set_memory_growth(gpu, True)
 def load_model():
     model = models.resnet_unet2( (640,960,1) )
     model.load_weights('model.h5')
@@ -27,9 +31,6 @@ def filter_stone(max_area,min_area, mask):
 
 
 
-#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-model = load_model()
-#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 def stone_detection(input_imgs, code='0000'):
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -94,7 +95,7 @@ def stone_detection(input_imgs, code='0000'):
     #filter by area and accept only white stone in mask  
     res_cnts = list(filter(filter_stone(max_area, min_area, outs) ,cnts))
     
-    print(len(res_cnts))
+    #print(len(res_cnts))
     res_img = cv2.drawContours(input_imgs[0], res_cnts, -1, (255), 10)
     #cv2.imshow('res', res_img)
     #cv2.waitKey(0)
@@ -121,21 +122,58 @@ def stone_detection(input_imgs, code='0000'):
     
     #write Jsones
     
-    with open('info.json', 'w') as file:
-        json.dump(info_dict,file)
+    # with open('info.json', 'w') as file:
+    #     json.dump(info_dict,file)
         
-    with open('stones.json', 'w') as file:
-        json.dump(stones_dict,file)
+    # with open('stones.json', 'w') as file:
+    #     json.dump(stones_dict,file)
     
-    return True
+    return stones_dict, info_dict
         
     
     
     
-    
-
-'''
+imgs_path = 'images'
+stones_json_path = 'stones'  
+info_json_path = 'informations'  
+import os
 if __name__ == '__main__':
-    img = cv2.imread('1.tiff',0)
-    print(stone_detection(img,'a123'))
-'''
+    #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    model = load_model()
+    #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    nfiles = 0 #len( os.listdir(imgs_path) )
+    while True:
+        
+        files = os.listdir(imgs_path)
+        if len( files ) > nfiles:
+            files.sort( reverse=True)
+            fname = str(len(files)) + '.jpg'
+            
+            img = cv2.imread(  os.path.join( imgs_path, fname) , 0 )
+            
+            stones_dict, info_dict =  stone_detection(img)
+            
+            jfname = fname[ : fname.find('.') ] + '.json'
+            
+            #print(jfname)
+            path = os.path.join( info_json_path, jfname )
+            with open(path, 'w') as file:
+                json.dump(info_dict,file)
+
+            path = os.path.join( stones_json_path, jfname )
+            with open(path, 'w') as file:
+                json.dump(stones_dict,file)
+            
+            
+                    
+        
+
+            nfiles = len( files )
+            
+        if len(files) == 0:
+            nfiles = 0
+            
+        
+        cv2.waitKey(20)
+    
+    
