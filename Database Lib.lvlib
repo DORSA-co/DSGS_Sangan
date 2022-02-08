@@ -4,4 +4,6 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">536903680</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
+	<Item Name="Database.vi" Type="VI" URL="../Database.vi"/>
+	<Item Name="Query.vi" Type="VI" URL="../Query.vi"/>
 </Library>
