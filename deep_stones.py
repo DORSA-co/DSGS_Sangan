@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
                     jfname = fname[: fname.find('.')] + '.json'
 
-                    # print(jfname)
+                    # print(jfname
                     path = os.path.join(info_json_path, jfname)
                     with open(path, 'w') as file:
                         json.dump(info_dict, file)
