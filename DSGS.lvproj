@@ -20,6 +20,7 @@
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Maintenance Lib.lvlib" Type="Library" URL="../Maintenance Lib.lvlib"/>
 		<Item Name="Setting Lib.lvlib" Type="Library" URL="../Setting Lib.lvlib"/>
+		<Item Name="Untitled 1.vi" Type="VI" URL="../Untitled 1.vi"/>
 		<Item Name="User Lib.lvlib" Type="Library" URL="../User Lib.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">

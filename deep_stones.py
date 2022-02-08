@@ -143,6 +143,11 @@ if __name__ == '__main__':
     model.predict(np.random.rand(1, 640, 960, 1))
     # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     nfiles = 0  # len( os.listdir(imgs_path) )
+    
+    # img = np.zeros((100,100), dtype = np.uint8)
+    # img[:,:] = np.random.randint(0,255)
+    # cv2.imwrite('000000.jpg', img)
+
     while True:
         if check_permission():
             try:
