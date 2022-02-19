@@ -15,5 +15,6 @@
 		<Property Name="typeDesc" Type="Bin">)!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!A(!!!!#!!A!!!!!!"!!N!"1!&amp;65FO&gt;$A!!1!!!!!!!!!!!!!!</Property>
 	</Item>
 	<Item Name="Abort.vi" Type="VI" URL="../Abort.vi"/>
+	<Item Name="General Setting.vi" Type="VI" URL="../General Setting.vi"/>
 	<Item Name="Settings.vi" Type="VI" URL="../Settings.vi"/>
 </Library>

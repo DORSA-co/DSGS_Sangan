@@ -2,9 +2,14 @@
 <Project Type="Project" LVVersion="20008000">
 	<Property Name="varPersistentID:{0BBE4CA3-DDEC-4E77-860C-E800D4BCB95F}" Type="Ref">/My Computer/User Lib.lvlib/Is Admin?</Property>
 	<Property Name="varPersistentID:{0F75DDAE-F089-4EBE-8CFD-6D4D650FABB7}" Type="Ref">/My Computer/User Lib.lvlib/Username</Property>
+	<Property Name="varPersistentID:{2B15D217-358B-46A6-A6E6-0E35E0F6C689}" Type="Ref">/My Computer/Parameters Lib.lvlib/Thresholds</Property>
 	<Property Name="varPersistentID:{2C3A872F-490B-4A2C-B2CC-E94984B127A6}" Type="Ref">/My Computer/User Lib.lvlib/Cancel Login</Property>
 	<Property Name="varPersistentID:{3E58E472-D20F-4561-8CF1-AF543BA1154B}" Type="Ref">/My Computer/Setting Lib.lvlib/Abort</Property>
+	<Property Name="varPersistentID:{536DE245-7672-48CB-9933-7F77CEE03257}" Type="Ref">/My Computer/Parameters Lib.lvlib/Area Threshold</Property>
+	<Property Name="varPersistentID:{66AD492A-1215-4AF0-A663-5C154902D7C7}" Type="Ref">/My Computer/Parameters Lib.lvlib/Width Threshold</Property>
+	<Property Name="varPersistentID:{AC120EB5-8F38-494B-B726-24601AD48975}" Type="Ref">/My Computer/Parameters Lib.lvlib/Reject Based on</Property>
 	<Property Name="varPersistentID:{CE25F19D-1F64-4F51-869E-C8DEAFF0300E}" Type="Ref">/My Computer/User Lib.lvlib/User Flag</Property>
+	<Property Name="varPersistentID:{F1B7A254-E391-4191-B5F0-166319272985}" Type="Ref">/My Computer/Parameters Lib.lvlib/Length Threshold</Property>
 	<Property Name="varPersistentID:{F3C00829-B243-4A3F-A107-C856953793F4}" Type="Ref">/My Computer/User Lib.lvlib/Is Dorsa?</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -19,6 +24,7 @@
 		<Item Name="Database Lib.lvlib" Type="Library" URL="../Database Lib.lvlib"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Maintenance Lib.lvlib" Type="Library" URL="../Maintenance Lib.lvlib"/>
+		<Item Name="Parameters Lib.lvlib" Type="Library" URL="../Parameters Lib.lvlib"/>
 		<Item Name="Setting Lib.lvlib" Type="Library" URL="../Setting Lib.lvlib"/>
 		<Item Name="User Lib.lvlib" Type="Library" URL="../User Lib.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
