@@ -5,5 +5,22 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Item Name="Database.vi" Type="VI" URL="../Database.vi"/>
+	<Item Name="Grading Data" Type="Variable">
+		<Property Name="featurePacks" Type="Str">Global</Property>
+		<Property Name="Global:EnableTimestamp" Type="Str">False</Property>
+		<Property Name="Network:BuffSize" Type="Str">50</Property>
+		<Property Name="Network:ElemSize" Type="Str">1</Property>
+		<Property Name="Network:PointsPerWaveform" Type="Str">1</Property>
+		<Property Name="Network:SingleWriter" Type="Str">False</Property>
+		<Property Name="Network:UseBinding" Type="Str">False</Property>
+		<Property Name="Network:UseBuffering" Type="Str">True</Property>
+		<Property Name="numTypedefs" Type="UInt">0</Property>
+		<Property Name="type" Type="Str">Global</Property>
+		<Property Name="typeDesc" Type="Bin">)!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!"%1!!!!#!!A!!!!!!#!!A!-0````]!)%"!!!,``````````Q!!$E&gt;S972J&lt;G=A2'&amp;U93!S!!!"!!%!!!!!!!!!!!!!!!!!!!!!</Property>
+	</Item>
+	<Item Name="Grading Table.vi" Type="VI" URL="../Grading Table.vi"/>
+	<Item Name="Graphs.vi" Type="VI" URL="../Graphs.vi"/>
+	<Item Name="Log Table.vi" Type="VI" URL="../Log Table.vi"/>
 	<Item Name="Query.vi" Type="VI" URL="../Query.vi"/>
+	<Item Name="Report.vi" Type="VI" URL="../Report.vi"/>
 </Library>
