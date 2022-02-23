@@ -13,7 +13,7 @@ for gpu in gpus:
 
 
 def load_model():
-    model = models.resnet_unet2((640, 960, 1))
+    model = models.resnet_unet((640, 960, 1))
     model.load_weights('model.h5')
     return model
 
