@@ -3,15 +3,29 @@
 	<Property Name="varPersistentID:{0BBE4CA3-DDEC-4E77-860C-E800D4BCB95F}" Type="Ref">/My Computer/User Lib.lvlib/Is Admin?</Property>
 	<Property Name="varPersistentID:{0F75DDAE-F089-4EBE-8CFD-6D4D650FABB7}" Type="Ref">/My Computer/User Lib.lvlib/Username</Property>
 	<Property Name="varPersistentID:{26FD380E-60D6-4CD3-867F-0ED70D5BED4F}" Type="Ref">/My Computer/Parameters Lib.lvlib/Process Rate</Property>
+	<Property Name="varPersistentID:{29152D40-4506-4BCF-B646-A710047509A8}" Type="Ref">/My Computer/Setting Lib.lvlib/Exposure Time</Property>
 	<Property Name="varPersistentID:{2B15D217-358B-46A6-A6E6-0E35E0F6C689}" Type="Ref">/My Computer/Parameters Lib.lvlib/Thresholds</Property>
 	<Property Name="varPersistentID:{2C3A872F-490B-4A2C-B2CC-E94984B127A6}" Type="Ref">/My Computer/User Lib.lvlib/Cancel Login</Property>
+	<Property Name="varPersistentID:{2DF28ADC-2A78-4AF7-8300-9628321402D2}" Type="Ref">/My Computer/Setting Lib.lvlib/Height Ratio</Property>
 	<Property Name="varPersistentID:{3E58E472-D20F-4561-8CF1-AF543BA1154B}" Type="Ref">/My Computer/Setting Lib.lvlib/Abort</Property>
+	<Property Name="varPersistentID:{5091EC48-B72A-4A7D-9EBE-A684FE43DEC8}" Type="Ref">/My Computer/Setting Lib.lvlib/Height</Property>
 	<Property Name="varPersistentID:{536DE245-7672-48CB-9933-7F77CEE03257}" Type="Ref">/My Computer/Parameters Lib.lvlib/Diameter Threshold</Property>
 	<Property Name="varPersistentID:{5D6810C2-4E7C-4A0E-8956-81C6D27088BD}" Type="Ref">/My Computer/Database Lib.lvlib/Grading Data</Property>
 	<Property Name="varPersistentID:{66AD492A-1215-4AF0-A663-5C154902D7C7}" Type="Ref">/My Computer/Parameters Lib.lvlib/Width Threshold</Property>
+	<Property Name="varPersistentID:{67D0F4F5-CA2A-4B5D-8F9A-1679B8256B7A}" Type="Ref">/My Computer/Setting Lib.lvlib/Width</Property>
+	<Property Name="varPersistentID:{691DDD69-CB5D-4C7E-9F50-214C3373C960}" Type="Ref">/My Computer/Setting Lib.lvlib/Offset X</Property>
+	<Property Name="varPersistentID:{831EBD73-5186-48CF-9817-72BE9CAEA787}" Type="Ref">/My Computer/Setting Lib.lvlib/Critical Temperature</Property>
+	<Property Name="varPersistentID:{86786F4A-8AA2-4DB9-A993-0573BB106357}" Type="Ref">/My Computer/Setting Lib.lvlib/Last Error</Property>
+	<Property Name="varPersistentID:{8DCBA9B3-E336-42DF-A09D-C0A8A13DC48D}" Type="Ref">/My Computer/Setting Lib.lvlib/Offset Y</Property>
+	<Property Name="varPersistentID:{A1F0E1D4-F395-4468-B0C3-25DFC4C77F37}" Type="Ref">/My Computer/Setting Lib.lvlib/Frame Rate</Property>
 	<Property Name="varPersistentID:{AC120EB5-8F38-494B-B726-24601AD48975}" Type="Ref">/My Computer/Parameters Lib.lvlib/Reject Based on</Property>
 	<Property Name="varPersistentID:{CE25F19D-1F64-4F51-869E-C8DEAFF0300E}" Type="Ref">/My Computer/User Lib.lvlib/User Flag</Property>
+	<Property Name="varPersistentID:{CED991D2-32CD-450E-9BE9-C306DD139D24}" Type="Ref">/My Computer/Setting Lib.lvlib/Width Ratio</Property>
+	<Property Name="varPersistentID:{CF276F05-FBB0-4958-AF10-6FB628FF5DDF}" Type="Ref">/My Computer/Setting Lib.lvlib/Clear Last Error</Property>
+	<Property Name="varPersistentID:{D0B1A4BA-9020-4869-92FB-B0CD10ACA38E}" Type="Ref">/My Computer/Setting Lib.lvlib/Over Temperature</Property>
+	<Property Name="varPersistentID:{E13EB012-FDCE-4C24-8B45-C2FF1E71133E}" Type="Ref">/My Computer/Setting Lib.lvlib/Temperature</Property>
 	<Property Name="varPersistentID:{F1B7A254-E391-4191-B5F0-166319272985}" Type="Ref">/My Computer/Parameters Lib.lvlib/Length Threshold</Property>
+	<Property Name="varPersistentID:{F2752B6A-9C8B-4407-9E17-0A34A30BF1D0}" Type="Ref">/My Computer/Setting Lib.lvlib/Gain</Property>
 	<Property Name="varPersistentID:{F3C00829-B243-4A3F-A107-C856953793F4}" Type="Ref">/My Computer/User Lib.lvlib/Is Dorsa?</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -72,6 +86,7 @@
 				<Item Name="IMAQ Write TIFF File 2" Type="VI" URL="/&lt;vilib&gt;/vision/Files.llb/IMAQ Write TIFF File 2"/>
 				<Item Name="LVRowAndColumnTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRowAndColumnTypeDef.ctl"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
+				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
 				<Item Name="NI_Database_API.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/database/NI_Database_API.lvlib"/>
 				<Item Name="NI_Excel.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Utility/NIReport.llb/Excel/NI_Excel.lvclass"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
@@ -83,6 +98,7 @@
 				<Item Name="NI_ReportGenerationCore.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/NIReport.llb/NI_ReportGenerationCore.lvlib"/>
 				<Item Name="NI_ReportGenerationToolkit.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/_office/NI_ReportGenerationToolkit.lvlib"/>
 				<Item Name="NI_Standard Report.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Utility/NIReport.llb/Standard Report/NI_Standard Report.lvclass"/>
+				<Item Name="NI_Vision_Acquisition_Software.lvlib" Type="Library" URL="/&lt;vilib&gt;/vision/driver/NI_Vision_Acquisition_Software.lvlib"/>
 				<Item Name="OccFireType.ctl" Type="VI" URL="/&lt;vilib&gt;/Platform/ax-events.llb/OccFireType.ctl"/>
 				<Item Name="Open Registry Key.vi" Type="VI" URL="/&lt;vilib&gt;/registry/registry.llb/Open Registry Key.vi"/>
 				<Item Name="Path to URL inner.vi" Type="VI" URL="/&lt;vilib&gt;/printing/PathToURL.llb/Path to URL inner.vi"/>
@@ -118,10 +134,14 @@
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="IMAQdx.ctl" Type="VI" URL="../IMAQdx.ctl"/>
 			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+			<Item Name="niimaqdx.dll" Type="Document" URL="niimaqdx.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="nivision.dll" Type="Document" URL="nivision.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
