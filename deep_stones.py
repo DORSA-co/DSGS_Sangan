@@ -124,6 +124,61 @@ def stone_detection(input_imgs):
     return stones_dict, info_dict, res_img
 
 
+
+import detect
+from pathlib import Path
+import details
+
+FILE = Path(__file__).resolve()
+ROOT = FILE.parents[0]  # YOLOv5 root directory
+
+
+def stone_detection_2(input_img):
+    print(input_img)
+    img=cv2.imread(input_img)
+
+    # cv2.imshow('asd',img)
+    # cv2.waitKey(0)
+
+    w,h,_=img.shape
+
+    # print(input_img)
+    img_name=input_img.split("\\", -1)[1][:-4]
+    print(img_name)
+
+    
+
+    
+
+
+    detect.run(weights='best.onnx',  # model.pt path(s)
+        source=input_img,  # file/dir/URL/glob, 0 for webcam
+        data=ROOT / 'data/coco128.yaml',  # dataset.yaml path
+        imgsz=(640, 640),  # inference size (height, width)
+        conf_thres=0.6,  # confidence threshold
+        iou_thres=0.45,  # NMS IOU threshold
+        max_det=50,  # maximum detections per image
+        device='')  # cuda device, i.e. 0 or 0,1,2,3 or cpu
+
+    info_dict,stones_dict=details.details('runs\detect\exp\labels\{}.txt'.format(img_name),w,h)
+
+    res_img=cv2.imread('runs\detect\exp\{}.jpg'.format(img_name))
+
+
+    # cv2.imshow('img',res_img)
+    # cv2.waitKey(0)
+    
+
+
+    return stones_dict, info_dict, res_img
+
+    
+
+
+
+
+
+
 def check_permission():
     try:
         f = open('permission.json')
@@ -137,48 +192,67 @@ imgs_path = 'images'
 stones_json_path = 'stones'
 info_json_path = 'informations'
 res_img_path = 'results'
+
 if __name__ == '__main__':
     # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    model = load_model()
-    model.predict(np.random.rand(1, 640, 960, 1))
+    # model = load_model()
+    # model.predict(np.random.rand(1, 640, 960, 1))
     # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     nfiles = 0  # len( os.listdir(imgs_path) )
     
     # img = np.zeros((100,100), dtype = np.uint8)
     # img[:,:] = np.random.randint(0,255)
     # cv2.imwrite('000000.jpg', img)
-
+    # print('asdwqdqwqdqwdqwdqwdwqdqwd')
     while True:
-        if check_permission():
-            try:
-                files = os.listdir(imgs_path)
-                if len(files) > nfiles:
-                    time.sleep(0.01)
-                    files.sort(reverse=True)
-                    fname = str(len(files)) + '.jpg'
+        # if check_permission():
+        if True:
+            # try:
+            files = os.listdir(imgs_path)
+            # print(files)
+            if len(files) > nfiles:
+                # print('*'*1000)
+                time.sleep(0.01)
+                files.sort(reverse=True)
+                fname = str(len(files)) + '.jpg'
 
-                    img = cv2.imread(os.path.join(imgs_path, fname), 0)
 
-                    stones_dict, info_dict, res_img = stone_detection(img)
-                    cv2.imwrite(os.path.join(res_img_path, fname), res_img)
+                # img = cv2.imread(os.path.join(imgs_path, fname), 0)
+                x=cv2.imread(os.path.join(imgs_path, fname))
+                # cv2.imshow('asdaw',x)
+                # cv2.waitKey(200)
 
-                    jfname = fname[: fname.find('.')] + '.json'
+                stones_dict, info_dict, res_img = stone_detection_2(os.path.join(imgs_path, fname))
+                
+                
+                try:
+                    path_label = 'runs\detect\exp\labels'
+                    for fname in os.listdir( path_label):
+                        os.remove(os.path.join( path_label, fname)) 
+                except:
+                    print('erorr: delete labels.txt problem')
+                cv2.imwrite(os.path.join(res_img_path, fname), res_img)
 
-                    # print(jfname
-                    path = os.path.join(info_json_path, jfname)
-                    with open(path, 'w') as file:
-                        json.dump(info_dict, file)
+                
 
-                    path = os.path.join(stones_json_path, jfname)
-                    with open(path, 'w') as file:
-                        json.dump(stones_dict, file)
+                jfname = fname[: fname.find('.')] + '.json'
 
-                    nfiles = len(files)
+                # print(jfname
+                path = os.path.join(info_json_path, jfname)
+                with open(path, 'w') as file:
+                    json.dump(info_dict, file)
 
-                if len(files) == 0:
-                    nfiles = 0
-            except:
-                continue
+                path = os.path.join(stones_json_path, jfname)
+                with open(path, 'w') as file:
+                    json.dump(stones_dict, file)
+
+                nfiles = len(files)
+
+            if len(files) == 0:
+                nfiles = 0
+            # except:
+            #     print('asdaw')
+            #     continue
 
         else:
             nfiles = 0
